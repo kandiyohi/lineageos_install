@@ -1,0 +1,50 @@
+Steps I followed to root my device (with archive link backups for
+documentation):
+
+Follow the steps outlined here:
+
+	https://wiki.lineageos.org/devices/bullhead/install
+	http://archive.is/TzC7s
+
+Additionally:
+
+	Get the factory image for my device.  I used:
+	
+		https://developers.google.com/android/images#bullhead
+		7.1.2 (N2G48C, Aug 2017)
+		https://dl.google.com/dl/android/aosp/bullhead-n2g48c-factory-45d442a2.zip
+
+	And then flash the bootloader, radio, and vendor images.  I did
+	this to make sure all device peripherals worked (especially
+	fingerprint sensor) and to quell the vendor image warning.  These
+	commands after `adb reboot-bootloader`:
+
+		fastboot flash radio .\radio-bullhead-m8994f-2.6.37.2.21.img
+		fastboot flash bootloader .\bootloader-bullhead-bhz11m.img
+		fastboot flash vendor .\vendor.img
+
+	Use http://opengapps.org/?api=7.1&variant=nano#downloadsection for
+	GApps.  This should be installed before first reboot, however I forgot
+	to do this the first time around and decided to press on to see what
+	happens (seemingly nothing bad happened).  I eventually redid the
+	install and did it properly.
+
+	I disabled the installation of the Google Dialer in installer.sh for
+	openGApps for call recording functionality.  This is provided in the
+	open_gapps-arm64-7.1-nano-20171124-mod directory.  As a side note, the
+	installer.sh uses black magic and I went a little crazy.
+
+	Disabling it still didn't enable call recording, so I am unsure of what
+	is happening with that.  I might try a no GApps install to see if
+	that's the issue.
+
+-----
+
+Less detailed henceforth.
+
+Backups:
+
+	I backed up all phone settings.  In order to restore a backup, I would
+	need to push the backup to /storage/emulated/0/TWRP/BACKUPS so that
+	TWRP can see and restore it.  I pulled the backup from that originally.
+	THe internal storage has room to only save one full system backup.
