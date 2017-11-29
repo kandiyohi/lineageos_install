@@ -48,3 +48,18 @@ Backups:
 	need to push the backup to /storage/emulated/0/TWRP/BACKUPS so that
 	TWRP can see and restore it.  I pulled the backup from that originally.
 	THe internal storage has room to only save one full system backup.
+
+
+-----
+
+Firewall
+
+Since I have Google Fi, I have to pay for all the data I use.  I wanted a
+solution to whitelist apps for data, such as my web browser, since that doesn't
+(usually) download in the background.
+
+I downloaded AFWall+ off of the F-Droid store.  Messenger was having an issue
+staying blocked, but then I went into settings and enabled IPv6 controls and it
+worked like a charm.
+
+The first column is Wifi, and the second is Data.
