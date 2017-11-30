@@ -63,3 +63,13 @@ staying blocked, but then I went into settings and enabled IPv6 controls and it
 worked like a charm.
 
 The first column is Wifi, and the second is Data.
+
+-----
+
+Google Fi, Hangouts, and SMS apps
+
+For some reason I could send SMS, but not receive it.  I went to
+hangouts.google.com, clicked "...", went into settings, and then unticked
+"Project Fi/Receive SMS and voicemail in Hangouts" to enable.  I re-enabled it
+because I wanted desktop texting functionality.  Apparently you can use SMS or
+Hangouts messaging, but not both.
