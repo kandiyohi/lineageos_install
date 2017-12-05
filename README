@@ -73,3 +73,42 @@ hangouts.google.com, clicked "...", went into settings, and then unticked
 "Project Fi/Receive SMS and voicemail in Hangouts" to enable.  I re-enabled it
 because I wanted desktop texting functionality.  Apparently you can use SMS or
 Hangouts messaging, but not both.
+
+-----
+
+Can't have Google Maps directions with music playing.
+
+I'd like to play music in my car while also having Google Maps directions.
+Android introduced this (anti-)feature called "audio focus".  The issue is when
+an app doesn't implement audio focus functionality, the default is to never
+allow another application to have such a thing.
+
+PowerAmp seems to allow it, so I am unsure how the audio focus mechanism
+actually works since I implemented my own media player app.  It's possible I
+don't know how it actually works, or perhaps PowerAmp replaces the AudioManager
+service in some way.
+
+My solution is to compile my own ROM so I can override the broken AudioManager
+behavior.
+
+-----
+
+Compiling ROM (`brunch bullhead`)
+
+Problems with packages:
+
+	emerge --ask schedtool imagemagick repo
+	eselect python set python2.7
+
+Those were the packages not installed on my system.  Not the full extent.  The
+repo tool uses python2.7, and the repository itself also needs it.
+
+Need to extract binary blobs because my ROM didn't include Tycho.apk (and
+probably others.  Before extracting and after mounting the image, do:
+
+	chown -R kandiyohi:kandiyohi system/
+	cd system
+	ln -sf . vendor
+
+To allow permissions to create the file (that extract.sh needs) and to fix the
+broken symlink vendor pointing to /vendor.
