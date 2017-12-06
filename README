@@ -103,6 +103,14 @@ Problems with packages:
 Those were the packages not installed on my system.  Not the full extent.  The
 repo tool uses python2.7, and the repository itself also needs it.
 
+Repo sync time:
+
+	real    737m46.255s
+	user    70m2.481s
+	sys     35.42.337s
+
+Over 12 hours wallclock time.  Yeesh.
+
 Need to extract binary blobs because my ROM didn't include Tycho.apk (and
 probably others.  Before extracting and after mounting the image, do:
 
